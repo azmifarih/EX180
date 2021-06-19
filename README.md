@@ -3,9 +3,9 @@ Problemas de practica como los del curso DO180.
 Las soluciones esan en el branch "soluciones"  
 
 ### SOBRE PODMAN  
-P1) Server http  
-P2)  
-P3)  
+P1) Server Http  
+P2) Server Mysql 
+P3) Variado 
 
 ### SOBRE OPENSHIFT
 P1)  
