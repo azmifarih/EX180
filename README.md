@@ -1,5 +1,6 @@
 # PREPARACION DEL EXAMEN EX180 REDHAT
-## PROBLEMAS DE PRACTICA COMO LOS DEL CURSO DO180  
+Problemas de practica como los del curso DO180.  
+Las soluciones esan en el branch "soluciones"  
 
 ### SOBRE PODMAN  
 P1) Server http  
