@@ -1,5 +1,5 @@
 # Server MYSQL
-Dockerfile  
+### Dockerfile  
 Hacer un dockerfile para levantar un servicio mysql
 1) Usar la siguiente imagen rhscl/mysql-57-rhel7
 2) Copiar http://legacy.redhat.com/pub/redhat/linux/9/en/doc/RH-DOCS/pdf-en/rhl-gsg-es.pdf a /opt/app-root/src
@@ -9,7 +9,7 @@ Hacer un dockerfile para levantar un servicio mysql
 6) Copiar el archivo files/do180.mysql a /opt/app-root/src
 7) Corre como servicio
 
-Scripts  
+### Scripts  
 Crear scripts de build, start, stop, prueba, logs.
 1) Crear un script llamado build.sh para hacer el build con Nombre de la imagen do180-p2, Variable de build NOMBRE ingresar su nombre, luego mostrar la imagen creada
 2) Crear un script llamado start.sh para que inicie un contenedor llamado do180-p2c y exponga el puerto 13306:3306 y le pases la variable de enorno del punto 3 de Dockerfile
