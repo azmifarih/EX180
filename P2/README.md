@@ -5,7 +5,7 @@ Hacer un dockerfile para levantar un servicio mysql
 1) Copiar http://legacy.redhat.com/pub/redhat/linux/9/en/doc/RH-DOCS/pdf-en/rhl-gsg-es.pdf a /var/www
 2) Ejecutar el contenedor con las siguientes variables de entorno MYSQL_USER=user1,MYSQL_PASSWORD=mypa55,MYSQL_DATABASE=items,MYSQL_ROOT_PASSWORD=r00tpa55
 3) PORTFORWARD del port de host 13306 a 3306 del contenedor 
-4) Crear un volumen en el contendor de la carpeta DB para salvar la base de datos
+4) Crear un volumen en el contendor de la carpeta DB para salvar la base de datos en /var/local/mysql
 5)
 8) Corre como servicio
 
@@ -17,4 +17,5 @@ Crear scripts de build, start, stop, prueba, logs.
 4) Crear un script llamado stop.sh para stopear el contenedor y eliminar el contenedor
 5) Crear un script llamado logs.sh para obtener los ultimos 20 logs
 6) Crear un script para tagear la imagen y subirla a docker.io tambien salvarla a imagen-local.tar
+7) hacer commit, diff
 
