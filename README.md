@@ -5,7 +5,7 @@ Las soluciones esan en el branch "soluciones"
 ### SOBRE PODMAN  
 P1) Server Http  
 P2) Server Mysql 
-P3)  
+P3) Variado 
 
 ### SOBRE OPENSHIFT
 P1)  
