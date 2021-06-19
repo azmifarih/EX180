@@ -17,5 +17,5 @@ Crear scripts de build, start, stop, prueba, logs.
 4) Crear un script llamado stop.sh para stopear el contenedor y eliminar el contenedor
 5) Crear un script llamado logs.sh para obtener los ultimos 20 logs
 6) Crear un script llamado tags.sh para tagear la imagen y subirla a docker.io tambien bajar la imagen y salvarla a do180-p2.tar
-7) hacer commit, diff
+7) Hacer un  diff y ver las modificaciones con respecto a la imagen FROM, ademas hacer un touch foo.txt y luego commitear el contenedor a una  imagen llamada do180-p2-tuned
 
