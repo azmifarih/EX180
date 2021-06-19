@@ -6,7 +6,7 @@ Hacer un dockerfile para levantar un servicio mysql
 2) Ejecutar el contenedor con las siguientes variables de entorno MYSQL_USER=user1,MYSQL_PASSWORD=mypa55,MYSQL_DATABASE=items,MYSQL_ROOT_PASSWORD=r00tpa55
 3) PORTFORWARD del port de host 13306 a 3306 del contenedor 
 4) Crear un volumen en el contendor de la carpeta DB para salvar la base de datos en /var/local/mysql
-5)
+5) Copiar el archivo files/do180.mysql a /opt/app-root/src
 8) Corre como servicio
 
 Scripts  
