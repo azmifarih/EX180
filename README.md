@@ -7,7 +7,7 @@ P2)
 P3)  
 
 ### SOBRE OPENSHIFT
-P1) 
+P1)  
 P2)  
 P3)  
 
