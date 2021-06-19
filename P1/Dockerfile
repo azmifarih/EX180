@@ -1,19 +1,17 @@
 FROM centos
 
-ARG NOMBRE=redhat
+#BUILD ARG
 
 MAINTAINER mosco moscolo@gmail.com
 
-RUN    yum install -y httpd && \
-       yum clean all
+#INSTALACION DE LOS PAQUETES
 
-COPY ./files/index.html /var/www/html/index2.html
+#COPIAR ARCHIVOS
 
-ENV PORT=80
-ENV ENTORNO=default
-EXPOSE ${PORT}
+#VARIABLES DE ENTORNO
 
-RUN echo "Hola ${NOMBRE} desde ${ENTORNO}!!" > /var/www/html/index.html
+#EXPONER PUERTO
 
-ENTRYPOINT ["/usr/sbin/httpd"]
-CMD ["-D", "FOREGROUND"]
+#GENERAL EL INDEX.HTML
+
+#ENTRYPOINT
