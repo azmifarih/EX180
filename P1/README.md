@@ -16,3 +16,5 @@ Crear scripts de build, start, stop, prueba, logs.
 3) Crear un script llamado prueba.sh para hacer un curl de index.html y index2.html al puerto expuesto en el punto 2, haga un echo de la variable de entrorno ENTORNO
 4) Crear un script llamado stop.sh para stopear el contenedor y eliminar el contenedor
 5) Crear un script llamado logs.sh para obtener los ultimos 20 logs
+6) Crear un script para tagear la imagen y subirla a docker.io tambien salvarla a imagen-local.tar
+
