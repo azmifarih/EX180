@@ -10,7 +10,7 @@ Hacer un dockerfile para levantar un servicio mysql
 7) Corre como servicio
 
 ### Scripts  
-Crear scripts de build, start, stop, prueba, logs.
+Crear scripts de build, start, stop, dump, logs.
 1) Crear un script llamado build.sh para hacer el build con Nombre de la imagen do180-p2, Variable de build NOMBRE ingresar su nombre, luego mostrar la imagen creada
 2) Crear un script llamado start.sh para que inicie un contenedor llamado do180-p2c y exponga el puerto 13306:3306 y le pases la variable de enorno del punto 3 de Dockerfile
 3) Crear un script llamado dump.sh para copiar la db do180 en mysql/dump.sql al contenedor, verificar que se crearon las tablas correctamente.
