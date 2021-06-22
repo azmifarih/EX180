@@ -12,9 +12,9 @@ P2) Server Mysql
 P3) Variado  
 
 ### SOBRE OPENSHIFT
-P1)  
-P2)  
-P3)  
+P4)  
+P5)  
+P6)  
 
 
 
