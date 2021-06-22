@@ -3,10 +3,10 @@
 Hacer un dockerfile para levantar un servicio mysql
 1) Usar la siguiente imagen rhscl/mysql-57-rhel7
 2) Copiar http://legacy.redhat.com/pub/redhat/linux/9/en/doc/RH-DOCS/pdf-en/rhl-gsg-es.pdf a /opt/app-root/src
-3) Ejecutar el contenedor con las siguientes variables de entorno MYSQL_USER=user1,MYSQL_PASSWORD=mypa55,MYSQL_DATABASE=items,MYSQL_ROOT_PASSWORD=r00tpa55
+3) Ejecutar el contenedor con las siguientes variables de entorno MYSQL_USER=user1,MYSQL_PASSWORD=mypa55,MYSQL_DATABASE=do180,MYSQL_ROOT_PASSWORD=r00tpa55
 4) PORTFORWARD del port de host 13306 a 3306 del contenedor 
-5) Crear un volumen en el contendor de la carpeta DB para salvar la base de datos en /var/local/mysql
-6) Copiar el archivo files/do180.mysql a /opt/app-root/src
+5) Crear un volumen en el contendor de la carpeta DB para salvar la base de datos en /var/local/mysql/data
+6) Copiar el archivo mysql/do180.sql a /opt/app-root/src
 7) Corre como servicio
 
 ### Scripts  
