@@ -1,13 +1,13 @@
 # Server HTTP 
 Dockerfile  
-Hacer un dockerfile para levantar un servicio httpd  
+Hacer un dockerfile para levantar un servicio httpd usar centos
 1) Hacer un yum install de httpd y luego un yum clean all en una sola layer
-2) Copiar el index.html en /var/www/html/index2.html  
-3) PORTFORWARD del port de host 20080 a 80 del contenedor 
+2) Copiar el ./files/index.html en /var/www/html/index2.html  
+3) PORTFORWARD del port de host 8080 a 80 del contenedor 
 4) Crear una variable build llamada NOMBRE con el valor por default Redhat
-5) El dockerfile debe crear un archivo index.html en /var/www/html con el contenido "Hola $NOMBRE!!!"
+5) El dockerfile debe crear un archivo index.html en /var/www/html con el contenido  "Hola ${NOMBRE} desde ${ENTORNO}!!"
 6) Usar el USER con apache para correrlo
-7) Crear una variable de entorno llamada ENTORNO=dafault 
+7) Crear una variable de entorno llamada ENTORNO=default 
 8) Corre como servicio
 
 Scripts  
