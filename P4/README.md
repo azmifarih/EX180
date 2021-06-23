@@ -3,7 +3,14 @@
 6-03 
 6-05 idem pero con nombre custom oc expose svc/php-helloworld --name=${RHT_OCP4_DEV_USER}-xyz
 
-1.3) Create a new project that contains your RHOCP developer username for the resources you create during this exercise:
+.Create a new project that contains your user-mysql-openshift and a app called mysql-openshift
+. image in: registry.access.redhat.com/rhscl/mysql-57-rhel7:latest  
+. env vars used: MYSQL_USER=user1   MYSQL_PASSWORD=mypa55  MYSQL_DATABASE=do180  MYSQL_ROOT_PASSWORD=r00tpa55  
+.Expose route
+.Test
+
+
+
 
 
 1) Login ocp  
