@@ -1,7 +1,35 @@
-este es con podman, hace varios build y usa 2 contenedores una db y un node.
+Este es con podman, hace varios build y usa 2 contenedores una db y un node.  
+
+Hacer lab multicontainer-design start y luego y a /home/student/DO180/labs/multicontainer-design/images/mysql/ y hacer un build con el nombre do180/mysql-57-rhel7  
+Verificar la creacion de la imagen  
+Hacer un build de /home/student/DO180/labs/multicontainer-design/images/nodejs/ con el nombre do180/nodejs  
+Hacer un build /home/student/DO180/labs/multicontainer-design/deploy/nodejs/build.sh  
+Editar el /home/student/DO180/labs/multicontainer-design/deploy/nodejs/networked/run.sh agregando un podman run con la variables:  
+Para DB:  
+name mysql  
+MYSQL_DATABASE=items  
+MYSQL_USER=user1  
+MYSQL_PASSWORD=mypa55  
+MYSQL_ROOT_PASSWORD=r00tpa55  
+Volumen $PWD/work/data:/var/lib/mysql/data  
+Volumen $PWD/work/init:/var/lib/mysql/init  
+Puerto  30306 3306   
+Ip 10.88.100.101  
+Imagen do180/mysql-57-rhel7  
+ 
+Para NODE:  
+name todoapi  
+MYSQL_DATABASE=items  
+MYSQL_USER=user1  
+MYSQL_PASSWORD=mypa55  
+Port  30080:30080  
+Imagen do180/todonodejs  
+
+
+Hacer un curl -w "\n"  http://127.0.0.1:30080/todo/api/items/1  
 
 7.02  
-1) Hacer un lab multicontainer-design start y luego :
+1) Hacer un lab multicontainer-design start:
 Hacer un build de  /home/student/DO180/labs/multicontainer-design/images/mysql/Dockerfile
 sudo podman build -t do180/mysql-57-rhel7 --layers=false .
 sudo podman images
