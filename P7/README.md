@@ -1,11 +1,13 @@
-Este es con podman, hace varios build y usa 2 contenedores una db y un node.  
+# 7.02 Este es con podman, hace varios build y usa 2 contenedores una db y un node.  
 
 Hacer lab multicontainer-design start y luego y a /home/student/DO180/labs/multicontainer-design/images/mysql/ y hacer un build con el nombre do180/mysql-57-rhel7  
 Verificar la creacion de la imagen  
 Hacer un build de /home/student/DO180/labs/multicontainer-design/images/nodejs/ con el nombre do180/nodejs  
 Hacer un build /home/student/DO180/labs/multicontainer-design/deploy/nodejs/build.sh  
 Editar el /home/student/DO180/labs/multicontainer-design/deploy/nodejs/networked/run.sh agregando un podman run con la variables:  
+  
 Para DB:  
+Corre como servicio
 name mysql  
 MYSQL_DATABASE=items  
 MYSQL_USER=user1  
@@ -18,6 +20,7 @@ Ip 10.88.100.101
 Imagen do180/mysql-57-rhel7  
  
 Para NODE:  
+Corre como servicio
 name todoapi  
 MYSQL_DATABASE=items  
 MYSQL_USER=user1  
@@ -28,15 +31,16 @@ Imagen do180/todonodejs
 
 Hacer un curl -w "\n"  http://127.0.0.1:30080/todo/api/items/1  
 
-7.02  
-1) Hacer un lab multicontainer-design start:
+# SOLUCION
+
+1 Hacer un lab multicontainer-design start:
 Hacer un build de  /home/student/DO180/labs/multicontainer-design/images/mysql/Dockerfile
 sudo podman build -t do180/mysql-57-rhel7 --layers=false .
 sudo podman images
-2) Hacer un build de  /home/student/DO180/labs/multicontainer-design/images/nodejs/Dockerfile
+2 Hacer un build de  /home/student/DO180/labs/multicontainer-design/images/nodejs/Dockerfile
 sudo podman build -t do180/nodejs --layers=false .
 Este Dockerfiles tiene un ENV HOME=/opt/app-root/src que luego usa en WORKDIR ${HOME}
-3) Hacer un build del child image /home/student/DO180/labs/multicontainer-design/deploy/nodejs/build.sh 
+3 Hacer un build del child image /home/student/DO180/labs/multicontainer-design/deploy/nodejs/build.sh 
 basicamente tiene un sudo podman build -t do180/todonodejs --build-arg NEXUS_BASE_URL=ALGO .
 
 Dockerfile
@@ -46,10 +50,10 @@ MAINTAINER username <username@example.com>
 COPY run.sh build ${HOME}/
 RUN scl enable rh-nodejs8 'npm install --registry=http://$NEXUS_BASE_URL/repository/nodejs/'
 
-4)
+4
 
-
-4.1) Edit the run.sh file located at /home/student/DO180/labs/multicontainer-design/deploy/nodejs/networked to insert the podman run command at the appropriate line for invoking mysql container. The following screen shows the exact podman command to insert into the file.
+```
+4.1 Edit the run.sh file located at /home/student/DO180/labs/multicontainer-design/deploy/nodejs/networked to insert the podman run command at the appropriate line for invoking mysql container. The following screen shows the exact podman command to insert into the file.
 
 sudo podman run -d --name mysql -e MYSQL_DATABASE=items -e MYSQL_USER=user1 \
 -e MYSQL_PASSWORD=mypa55 -e MYSQL_ROOT_PASSWORD=r00tpa55 \
@@ -92,37 +96,36 @@ MYSQL_PASSWORD=mypa55
 {"id":1,"description":"Pick up newspaper","done":false}
 
 
-
+```
 
 # 7.04
-1) Hacer un build de /DO180/labs/multicontainer-openshift/images/mysql con el nombre do180-mysql-57-rhel7
-2) tag and pushit to quay.io 
-3) Hacer un build de /DO180/labs/multicontainer-openshift/images/nodejs  con el nombre do180-nodejs
-4) Go to the ~/DO180/labs/multicontainer-openshift/deploy/nodejs directory and run the build.sh command to build the child image.
-5) tag and push it to quay.io do180-todonodejs
-6) Create new project mosco-template
-7) Create new app from template /home/student/DO180/labs/multicontainer-openshift/todo-template.json with param RHT_OCP4_QUAY_USER=${RHT_OCP4_QUAY_USER} 
-8) Review deployment
-9) Expose route and Test app
+1 Hacer un build de /DO180/labs/multicontainer-openshift/images/mysql con el nombre do180-mysql-57-rhel7
+2 tag and pushit to quay.io 
+3 Hacer un build de /DO180/labs/multicontainer-openshift/images/nodejs  con el nombre do180-nodejs
+4 Go to the ~/DO180/labs/multicontainer-openshift/deploy/nodejs directory and run the build.sh command to build the child image.
+5 tag and push it to quay.io do180-todonodejs
+6 Create new project mosco-template
+7 Create new app from template /home/student/DO180/labs/multicontainer-openshift/todo-template.json with param RHT_OCP4_QUAY_USER=${RHT_OCP4_QUAY_USER} 
+8 Review deployment
+9 Expose route and Test app
+10 curl ruta /todo/api/items/1
 
-1) sudo podman build -t do180-mysql-57-rhel7 .
-2) sudo podman tag do180-mysql-57-rhel7 quay.io/sebastian_mascolo/do180-mysql-57-rhel7
+1 sudo podman build -t do180-mysql-57-rhel7 .
+2 sudo podman tag do180-mysql-57-rhel7 quay.io/sebastian_mascolo/do180-mysql-57-rhel7
    sudo podman login -u sebastian_mascolo quay.io;  sudo podman push quay.io/sebastian_mascolo/do180-mysql-57-rhel7
-3) sudo podman build -t do180-nodejs .
-4) Hacer un build del child image /home/student/DO180/labs/multicontainer-design/deploy/nodejs/build.sh
+3 sudo podman build -t do180-nodejs .
+4 Hacer un build del child image /home/student/DO180/labs/multicontainer-design/deploy/nodejs/build.sh
    basicamente tiene un sudo podman build -t do180/todonodejs --build-arg NEXUS_BASE_URL=ALGO .
-5) sudo podman images
+5 sudo podman images
    sudo podman tag do180/todonodejs quay.io/sebastian_mascolo/todonodejs
    sudo podman push quay.io/sebastian_mascolo/todonodejs
-6) oc new-project mosco-template
-7) oc process -f todo-template.json -p RHT_OCP4_QUAY_USER=${RHT_OCP4_QUAY_USER} |oc create -f -
-8) oc get pods -w
-9) oc expose svc/todoapi  
+6 oc new-project mosco-template
+7 oc process -f todo-template.json -p RHT_OCP4_QUAY_USER=${RHT_OCP4_QUAY_USER} |oc create -f -
+8 oc get pods -w
+9 oc expose svc/todoapi  
 
 
-
-
-y 7.05 Idem buildea contenedores pero con php y luego usa un template para crear los pods en ocp
+# 7.05 Idem 7.04 buildea contenedores pero con php y luego usa un template para crear los pods en ocp
 
 NOTA: ver porque no levantaba la mysql db no podia atachear un pvc
 
