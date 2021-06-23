@@ -1,7 +1,8 @@
 este es con podman, hace varios build y usa 2 contenedores una db y un node.
 
 7.02  
-1) Hacer un build de  /home/student/DO180/labs/multicontainer-design/images/mysql/Dockerfile
+1) Hacer un lab multicontainer-design start y luego :
+Hacer un build de  /home/student/DO180/labs/multicontainer-design/images/mysql/Dockerfile
 sudo podman build -t do180/mysql-57-rhel7 --layers=false .
 sudo podman images
 2) Hacer un build de  /home/student/DO180/labs/multicontainer-design/images/nodejs/Dockerfile
