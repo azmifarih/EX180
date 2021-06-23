@@ -1,6 +1,7 @@
-# 6-05 idem a 6-03 pero con name la ruta
+# 6-05 idem a 6-03 pero S2i y con name la ruta
 
-1) Create a S2I of php code  
+1) Create a S2I of php code from https://github.com/${RHT_OCP4_GITHUB_USER}/DO180-apps  with php 7.3, branch main, dir php-helloworld, name do180-p5
+ 
 oc new-project do180-p5  
 oc new-app --as-deployment-config  php:7.3~https://github.com/${RHT_OCP4_GITHUB_USER}/DO180-apps --context-dir php-helloworld --name do180-p5  
 
