@@ -103,16 +103,18 @@ MYSQL_PASSWORD=mypa55
 
 # 7.04 Idem pero con template, reemplaza el script de run.sh con un template
 
+0 lab multicontainer-openshift start && source /usr/local/etc/ocp4.config  
 1 Hacer un build de /DO180/labs/multicontainer-openshift/images/mysql con el nombre do180-mysql-57-rhel7  
 2 tag and pushit to quay.io  
 3 Hacer un build de /DO180/labs/multicontainer-openshift/images/nodejs  con el nombre do180-nodejs  
 4 Go to the ~/DO180/labs/multicontainer-openshift/deploy/nodejs directory and run the build.sh command to build the child image.  
 5 tag and push it to quay.io do180-todonodejs  
-6 Create new project mosco-template  
+6 Create new project ${RHT_OCP4_DEV_USER}-template    
 7 Create new app from template /home/student/DO180/labs/multicontainer-openshift/todo-template.json with param RHT_OCP4_QUAY_USER=${RHT_OCP4_QUAY_USER}  
 8 Review deployment  
 9 Expose route and Test app  
 10 curl ruta /todo/api/items/1  
+11 lab multicontainer-openshift finish
 
 
 # SOLUCION  
