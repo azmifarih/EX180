@@ -1,9 +1,11 @@
-8.02 
-idem 8.05 pero falta script de   "scripts": { "start": "node app.js" },
+8.02 silimar a  8.05  
 
-1) Fork del repo, clone clocal y crear un branch nuevo troubleshoot-s2i y crear un proyecto llamado nodejs
-2) Crear una app llamada nodejs s2i con imagen nodejs version 12, el fuente esta en la carpeta nodejs-helloworld  y con la variable de build npm_config_registry=http://${RHT_OCP4_NEXUS_SERVER}/repository/npm-proxy
-3) Ver si buildea
+1 Fork del repo, clone clocal y crear un branch nuevo troubleshoot-s2i y crear un proyecto llamado nodejs  
+2 Crear una app llamada nodejs s2i con imagen nodejs version 12, el fuente esta en la carpeta nodejs-helloworld  y con la variable de build npm_config_registry=http://${RHT_OCP4_NEXUS_SERVER}/repository/npm-proxy  
+3 Ver si buildea  
+4 Ayuda "scripts": { "start": "node app.js" }  
+
+```
 
 git checkout -b troubleshoot-s2i2
 git push
@@ -26,12 +28,15 @@ oc start-build nodjs
 oc logs dc/nodejs -f
 oc expose svc/nodejs
 curl ruta ok
+```
 
 
 
 8.04 Hace un podman log 
 
 Briefly review the custom httpd.conf file located at /home/student/DO180/labs/troubleshoot-container/conf/httpd.conf
+
+```
 
 [student@workstation ~]$ cd ~/DO180/labs/troubleshoot-container
 [student@workstation troubleshoot-container]$ sudo podman build \
@@ -49,7 +54,7 @@ Briefly review the custom httpd.conf file located at /home/student/DO180/labs/tr
 ... [mpm_event:debug] [pid 6:tid ...): AH02471: start_threads: Using epoll
 ... [mpm_event:debug] [pid 7:tid ...): AH02471: start_threads: Using epoll
 ... [mpm_event:debug] [pid 8:tid ...): AH02471: start_threads: Using epoll
-
+```
 
 
 
@@ -58,9 +63,7 @@ Briefly review the custom httpd.conf file located at /home/student/DO180/labs/tr
 
 
 # 8.05
-idem 8.02 pero script de   "scripts": { "start": "node app.js" },  
-0 lab troubleshoot-review start  
-  source /usr/local/etc/ocp4.config  
+0 lab troubleshoot-review start  && source /usr/local/etc/ocp4.config  
 1 Fork del repo, clone clocal y crear un branch nuevo  troubleshoot-review en DO180-apps  
 2 Crear un proyecto llamado ${RHT_OCP4_DEV_USER}-nodejs-app, una app llamada nodejs-dev s2i con imagen nodejs version 12, el fuente esta en nodejs-app y con la variable de build npm_config_registry=http://${RHT_OCP4_NEXUS_SERVER}/repository/npm-proxy  
 3 Ver si buildea  
