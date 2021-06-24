@@ -57,13 +57,29 @@ Briefly review the custom httpd.conf file located at /home/student/DO180/labs/tr
 
 
 
-8.05
-1) Fork del repo, clone clocal y crear un branch nuevo y crear un proyecto llamado nodejs-app
-2) Crear una app llamada nodejs-dev s2i con imagen nodejs version 12, el fuente esta en nodejs-app y con la variable de build npm_config_registry=http://${RHT_OCP4_NEXUS_SERVER}/repository/npm-proxy
-3) Ver si buildea
+# 8.05
+idem 8.02 pero script de   "scripts": { "start": "node app.js" },  
+0 lab troubleshoot-review start  
+  source /usr/local/etc/ocp4.config  
+1 Fork del repo, clone clocal y crear un branch nuevo  troubleshoot-review en DO180-apps  
+2 Crear un proyecto llamado ${RHT_OCP4_DEV_USER}-nodejs-app, una app llamada nodejs-dev s2i con imagen nodejs version 12, el fuente esta en nodejs-app y con la variable de build npm_config_registry=http://${RHT_OCP4_NEXUS_SERVER}/repository/npm-proxy  
+3 Ver si buildea  
+4 Arreglar el codigo, pushear y buildear denuevo
+5 Ver logs
+6 Exponer ruta
+7 curl nodejs-dev-${RHT_OCP4_DEV_USER}-nodejs-app.${RHT_OCP4_WILDCARD_DOMAIN}  
+8 lab troubleshoot-review finish  
 
 
 
+
+
+
+
+
+
+# SOLUCION
+```
 [student@workstation ~]$ oc new-app --as-deployment-config --name nodejs-dev \
 > https://github.com/${RHT_OCP4_GITHUB_USER}/DO180-apps#troubleshoot-review \
 > -i nodejs:12 --context-dir=nodejs-app --build-env \
@@ -119,4 +135,4 @@ app.get('/', function (req, res) {
 });
 
 Cambiar a env y luego start-build
-
+```

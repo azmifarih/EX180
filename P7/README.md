@@ -98,7 +98,11 @@ MYSQL_PASSWORD=mypa55
 
 ```
 
-# 7.04
+
+
+
+# 7.04 Idem pero con template, reemplaza el script de run.sh con un template
+
 1 Hacer un build de /DO180/labs/multicontainer-openshift/images/mysql con el nombre do180-mysql-57-rhel7
 2 tag and pushit to quay.io 
 3 Hacer un build de /DO180/labs/multicontainer-openshift/images/nodejs  con el nombre do180-nodejs
@@ -109,6 +113,9 @@ MYSQL_PASSWORD=mypa55
 8 Review deployment
 9 Expose route and Test app
 10 curl ruta /todo/api/items/1
+
+
+# SOLUCION  
 
 1 sudo podman build -t do180-mysql-57-rhel7 .
 2 sudo podman tag do180-mysql-57-rhel7 quay.io/sebastian_mascolo/do180-mysql-57-rhel7
