@@ -8,6 +8,8 @@ lab openshift-resources start
 source /usr/local/etc/ocp4.config  
 Expose route to workstation por 3306   
 Test  
+oc delete project ${RHT_OCP4_DEV_USER}-mysql-openshift  
+lab openshift-resources finish  
 
 
 ## Solution:  
@@ -43,4 +45,13 @@ oc expose svc/do180-p2
 oc get routes  
 
 
-## 6-05 idem pero con nombre custom oc expose svc/php-helloworld --name=${RHT_OCP4_DEV_USER}-xyz  
+## 6-05 idem 6.03  
+1 lab openshift-routes start  
+source /usr/local/etc/ocp4.config  
+2 new project ${RHT_OCP4_DEV_USER}-route  
+3 new app  php 7.3 s2i https://github.com/${RHT_OCP4_GITHUB_USER}/DO180-apps dir php-helloworld name php-helloworld  
+4 expose route with custom name  
+
+# SOLUTION
+
+oc expose svc/php-helloworld --name=${RHT_OCP4_DEV_USER}-xyz  
