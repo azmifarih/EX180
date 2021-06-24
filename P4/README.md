@@ -45,14 +45,3 @@ oc expose svc/do180-p2
 oc get routes  
 
 
-## 6-05 idem 6.03  
-1 lab openshift-routes start  
-source /usr/local/etc/ocp4.config  
-2 new project ${RHT_OCP4_DEV_USER}-route  
-3 new app  php 7.3 s2i https://github.com/${RHT_OCP4_GITHUB_USER}/DO180-apps dir php-helloworld name php-helloworld  
-4 expose route with custom name  
-5 lab openshift-routes finish  
-
-# SOLUTION
-
-oc expose svc/php-helloworld --name=${RHT_OCP4_DEV_USER}-xyz  
