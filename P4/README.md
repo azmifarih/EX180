@@ -4,6 +4,7 @@
 Create a new project that contains your user-mysql-openshift and a app called mysql-openshift  
 image in: registry.access.redhat.com/rhscl/mysql-57-rhel7:latest  
 env vars used: MYSQL_USER=user1   MYSQL_PASSWORD=mypa55  MYSQL_DATABASE=do180  MYSQL_ROOT_PASSWORD=r00tpa55  
+lab openshift-resources start
 source /usr/local/etc/ocp4.config  
 Expose route to workstation por 3306   
 Test  
