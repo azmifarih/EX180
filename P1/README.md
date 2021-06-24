@@ -8,6 +8,7 @@ Hacer un dockerfile para levantar un servicio httpd
 5) El dockerfile debe crear un archivo index.html en /var/www/html con el contenido "Hola $NOMBRE!!!"
 6) Usar el USER con apache para correrlo
 7) Crear una variable de entorno llamada ENTORNO=dafault 
+8) Ver entrypoint vs CMD https://stackoverflow.com/questions/21553353/what-is-the-difference-between-cmd-and-entrypoint-in-a-dockerfile  
 
 Scripts  
 Crear scripts de build, start, stop, prueba, logs.
