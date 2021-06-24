@@ -1,9 +1,11 @@
-8.02 silimar a  8.05  
+# 8.02 similar a 8.05  
 
 1 Fork del repo, clone clocal y crear un branch nuevo troubleshoot-s2i y crear un proyecto llamado nodejs  
 2 Crear una app llamada nodejs s2i con imagen nodejs version 12, el fuente esta en la carpeta nodejs-helloworld  y con la variable de build npm_config_registry=http://${RHT_OCP4_NEXUS_SERVER}/repository/npm-proxy  
 3 Ver si buildea  
 4 Ayuda "scripts": { "start": "node app.js" }  
+
+# SOLUCION
 
 ```
 
@@ -32,9 +34,11 @@ curl ruta ok
 
 
 
-8.04 Hace un podman log 
+# 8.04 Hace un podman log 
 
 Briefly review the custom httpd.conf file located at /home/student/DO180/labs/troubleshoot-container/conf/httpd.conf
+
+# SOLUCION
 
 ```
 
@@ -72,13 +76,6 @@ Briefly review the custom httpd.conf file located at /home/student/DO180/labs/tr
 6 Exponer ruta
 7 curl nodejs-dev-${RHT_OCP4_DEV_USER}-nodejs-app.${RHT_OCP4_WILDCARD_DOMAIN}  
 8 lab troubleshoot-review finish  
-
-
-
-
-
-
-
 
 
 # SOLUCION
