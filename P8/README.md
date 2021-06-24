@@ -1,6 +1,6 @@
 # 8.02 similar a 8.05  
-
-1 Fork del repo, clone clocal y crear un branch nuevo troubleshoot-s2i y crear un proyecto llamado nodejs  
+0 lab troubleshoot-s2i start &&  source /usr/local/etc/ocp4.config  
+1 Fork del repo, clone clocal y crear un branch nuevo troubleshoot-s2i y crear un proyecto llamado ${RHT_OCP4_DEV_USER}-nodejs  
 2 Crear una app llamada nodejs s2i con imagen nodejs version 12, el fuente esta en la carpeta nodejs-helloworld  y con la variable de build npm_config_registry=http://${RHT_OCP4_NEXUS_SERVER}/repository/npm-proxy  
 3 Ver si buildea  
 4 Ayuda "scripts": { "start": "node app.js" }  
