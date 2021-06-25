@@ -1,4 +1,4 @@
-## P6 (hasta 6.7)
+## P6 (6.7)
 
 1 Enter your local clone DO180-apps, "lab openshift-s2i start " and create new branch called s2i  
 2 Create new app s2i php v 7.3 name do180-p6, branch s2i dir php-helloworld  
