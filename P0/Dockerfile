@@ -1,3 +1,3 @@
 FROM centos
 
-CMD ["/bin/ping", "localhost"]
+ENTRYPOINT ["/bin/ping", "localhost"]
