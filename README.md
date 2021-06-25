@@ -1,10 +1,11 @@
-# PREPARACION DEL EXAMEN EX180 REDHAT
+#EX180 REDHAT EXAM
 
 ## ENGLISH
-This repo has exercises to practice EX180 exam, it covers all exercise of the D0180.
-You must install podman in yout pc.
-The exams is only exercise.
-The solutions are in the branch called "solucion"
+This repo has exercises to practice EX180 exam, it covers all exercise of the D0180.  
+You must install podman in yout pc.  
+The exams is only exercise.  
+
+The solutions are in the branch called "solucion"  
 
 ## SPANISH
 Problemas de practica como los del curso DO180. 
