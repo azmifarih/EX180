@@ -13,7 +13,7 @@ git checkout -b troubleshoot-s2i2
 git push
 git push --set-upstream origin troubleshoot-s2i2
 
-oc new-app --as-deployment-config --name nodejs  https://github.com/${RHT_OCP4_GITHUB_USER}/DO180-apps#troubleshoot-review2  -i nodejs:12 --context-dir=nodejs-app --build-env  npm_config_registry=http://${RHT_OCP4_NEXUS_SERVER}/repository/npm-proxy
+oc new-app --as-deployment-config --name nodejs  https://github.com/${RHT_OCP4_GITHUB_USER}/DO180-apps#troubleshoot-s2i  -i nodejs:12 --context-dir=nodejs-helloworld` --build-env  npm_config_registry=http://${RHT_OCP4_NEXUS_SERVER}/repository/npm-proxy
 
 oc logs bc/nodejs -f
 Falla No matching version found

@@ -7,7 +7,7 @@
 5 Curl de route  
 6 Change index.php and commit the changes to git  
 7 Redeploy de app and curl again  
-
+8 lab openshift-s2i finish  
 
 # SOLUTION
 ```

@@ -30,6 +30,7 @@ Imagen do180/todonodejs
 
 
 Hacer un curl -w "\n"  http://127.0.0.1:30080/todo/api/items/1  
+lab multicontainer-design finish
 
 # SOLUCION
 
@@ -57,8 +58,8 @@ RUN scl enable rh-nodejs8 'npm install --registry=http://$NEXUS_BASE_URL/reposit
 
 sudo podman run -d --name mysql -e MYSQL_DATABASE=items -e MYSQL_USER=user1 \
 -e MYSQL_PASSWORD=mypa55 -e MYSQL_ROOT_PASSWORD=r00tpa55 \
--v $PWD/work/data:/var/lib/mysql/data \
--v $PWD/work/init:/var/lib/mysql/init -p 30306:3306 \
+-v ./work/data:/var/lib/mysql/data \
+-v ./work/init:/var/lib/mysql/init -p 30306:3306 \
 --ip 10.88.100.101 do180/mysql-57-rhel7
 
 
